@@ -1,0 +1,34 @@
+!!!
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{ title }
+    link(rel="stylesheet", href="/assets/css/app.css")
+    link(rel="alternate", type="application/rss+xml", title="#{ title } RSS", href="/rss.xml")
+  body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
+    article#content
+      .container.main-content
+        .row
+          .col-sm-8.main
+            != yield
+          .col-sm-offset-1.col-sm-3.aside
+            p: a(href="/"): img.aside-profile-img.aside-img(src="http://placekitten.com/g/200/200")
+            p: strong Web Engineer &amp; Designer
+            p I live in Vancouver, Canada, where I build websites for startups and small 
+            p Twitter: 
+              a(href="http://twitter.com/#{ twitter }") #{ twitter }
+    hr
+
+    footer
+      .container
+        .row
+          .col-sm-6
+            p: small &copy; 2013 #{ title }
+          .col-sm-6
+            p.pull-right
+              small: a(href="/rss.xml", title="#{ title } RSS feed")
+                img.rss-feed(src="/assets/images/feed-icon.png")
+                |  RSS feed
+
+    script(src="/assets/js/app.js")

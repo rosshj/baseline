@@ -1,0 +1,8 @@
+{
+  "domains": [""],
+  "globals": {
+    "title": "My Harp Blog",
+    "twitter": "@HarpPlatform",
+    "site_url": "http://example.com"
+  }
+}
