@@ -1,0 +1,31 @@
+doctype 5
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    title= locals.title ? title + " - Blog Title" : "Blog Title"
+    link(rel='shortcut icon', href='/favicon.ico')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic')
+    link(rel="stylesheet", href='/css/main.css')
+  body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
+    header.masthead
+      .container
+        h1
+          a(href='/') Blog Title
+      .img
+    .content
+      .container
+        if current.path[0] === "index"
+          .articles
+            for post, slug in public.blog.data
+              article
+                a(href="/blog/#{ slug }")
+                  h1= post.title
+                  h2.xs.date= post.date
+                  p= post.description
+        else
+          if current.path[0] === "blog"
+            != partial("/blog/_blog", { yield: yield })
+          else if ["404", "about"].indexOf(current.path[0]) !== -1
+            section.page
+              != yield
