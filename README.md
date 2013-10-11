@@ -1,3 +1,3 @@
-# Baseline Blog Boilerplate for the Harp Platform
+# Baseline Boilerplate for Harp
 
-Coming soon.
+In development.

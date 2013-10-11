@@ -1,12 +1,22 @@
 {
   "sample-blog-post": {
     "title": "Sample Blog Post",
-    "date": "October 31, 2013",
+    "date": "October 29, 2013",
     "description": "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."
   },
-  "blog-post-with-a-video": {
-    "title": "Blog Post with a Video",
-    "date": "October 26, 2013",
+  "video-blog-post": {
+    "title": "Video Blog Post",
+    "date": "October 10, 2013",
+    "description": "Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui."
+  },
+  "text-only-blog-post": {
+    "title": "Text Only Blog Post",
+    "date": "September 16, 2013",
+    "description": "Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui."
+  },
+  "code-in-a-post": {
+    "title": "Code in a Post",
+    "date": "August 9, 2013",
     "description": "Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui."
   }
 }
