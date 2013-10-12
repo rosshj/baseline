@@ -1,5 +1,5 @@
 article.post
-  h1.lg.title #{ title }
-  h2.sm.date #{ date }
+  h1.lg.title= title
+  h2.sm.date= date
   != yield
   != partial("../_shared/disqus")

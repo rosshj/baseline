@@ -8,11 +8,13 @@ html(lang="en")
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lekton')
     link(rel="stylesheet", href='/css/main.css')
+    //if lt IE 9
+      <script src="/js/html5shiv.js"></script>
   body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
     header.masthead
       .container
         h1
-          a(href='/') Blog Title
+          a(href='/') Baseline
       .img
     .content
       .container
@@ -26,7 +28,7 @@ html(lang="en")
                   p= post.description
         else
           if current.path[0] === "blog"
-            != partial("/blog/_blog", { yield: yield })
+            != partial("/blog/_blog")
           else if ["404", "about"].indexOf(current.path[0]) !== -1
             section.page
               != yield

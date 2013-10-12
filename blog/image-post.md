@@ -1,1 +1,0 @@
-![Sample image alt text](/images/sample-image.jpg)
