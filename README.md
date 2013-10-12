@@ -10,4 +10,8 @@
 
 In development.
 
+---
+
+![Baseline on Desktop and iPhone](http://rosshj.com/files/harp/baseline/baseline.jpg)
+
 By: [Ross Howard-Jones](http://rosshj.com/)
