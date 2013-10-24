@@ -23,3 +23,13 @@ By: [Ross Howard-Jones](http://rosshj.com/)
 3. View at [localhost:9000](http://localhost:9000)
 
 For easy deployment (via Dropbox) see [The Harp Platform](http://harp.io).
+
+### TODO
+
+- Open Graph meta tags
+- Twitter Cards
+- Better author support
+- Author links to Google+
+- RSS/XML Feed
+- Paging or Infinite Scroll
+- next and prev links in head
