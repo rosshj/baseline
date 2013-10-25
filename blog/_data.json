@@ -1,4 +1,7 @@
 {
+  "rss": {
+    "layout": false
+  },
   "sample-blog-post": {
     "title": "Sample Blog Post",
     "date": "October 29, 2013",

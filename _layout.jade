@@ -3,8 +3,10 @@ html(lang="en")
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
-    title= locals.title ? title + " | Blog Title" : "Blog Title"
+    title= locals.title ? title + " | " + public.data.globals.title : public.data.globals.title
+    meta(name='description', content='#{ public.data.globals.description }')
     link(rel='shortcut icon', href='/favicon.ico')
+    link(rel='alternate', type='application/rss+xml', title='#{ public.data.globals.title } RSS Feed', href='/blog/rss.xml')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lekton')
     link(rel="stylesheet", href='/css/main.css')
@@ -14,7 +16,7 @@ html(lang="en")
     header.masthead
       .container
         h1
-          a(href='/') Baseline
+          a(href='/')= public.data.globals.title
       .img
     .content
       .container

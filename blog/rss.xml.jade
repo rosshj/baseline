@@ -1,0 +1,14 @@
+doctype xml
+rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom')
+  channel
+    title= public.data.globals.title
+    description= public.data.globals.description
+    link= public.data.globals.site_url
+    | <atom:link href="http://baseline.harp.nu/blog/rss.xml" rel="self" type="application/rss+xml" />
+    for post, slug in public.blog.data
+      item
+        title= post.title
+        description= post.description
+        pubDate= post.date
+        link= public.data.globals.site_url + "/" + slug
+        guid(isPermaLink='true')= public.data.globals.site_url + "/" + slug

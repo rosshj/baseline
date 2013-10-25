@@ -28,6 +28,5 @@ For easy deployment (via Dropbox) see [The Harp Platform](http://harp.io).
 - Twitter Cards
 - Better author support
 - Author links to Google+
-- RSS/XML Feed
 - Paging or Infinite Scroll
 - next and prev links in head
