@@ -24,7 +24,6 @@ For easy deployment (via Dropbox) see [The Harp Platform](http://harp.io).
 
 ## Roadmap
 
-- Open Graph meta tags
 - Twitter Cards
 - Better author support
 - Author links to Google+
