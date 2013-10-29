@@ -3,25 +3,25 @@ html(lang="en")
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
-    title= locals.title ? title + " | " + public.data.globals.title : public.data.globals.title
+    title= locals.title ? title + " | " + site_title : site_title
     if current.path[0] === "index"
-      meta(name='description', content='#{ public.data.globals.description }')
+      meta(name='description', content=description)
     else
       if current.path[0] === "blog"
-        meta(name='description', content='#{ locals.description }')
-    meta(property='og:title', content='#{ locals.title ? title + " | " + public.data.globals.title : public.data.globals.title }')
+        meta(name='description', content=description)
+    meta(property='og:title', content=locals.title ? title + " | " + site_title : site_title)
     if current.path[0] === "index"
-      meta(property='og:description', content='#{ public.data.globals.description }')
-      meta(property='og:url', content='#{ public.data.globals.site_url }')
+      meta(property='og:description', content=description)
+      meta(property='og:url', content=site_url)
       meta(property='og:type', content='website')
     else
       if current.path[0] === "blog"
-        meta(property='og:description', content='#{ locals.description }')
-        meta(property='og:url', content='#{ public.data.globals.site_url + "/" + current.path[1] }')
+        meta(property='og:description', content=description)
+        meta(property='og:url', content=site_url + "/" + current.path[1])
         meta(property='og:type', content='article')
-    meta(property='og:image', content='#{ public.data.globals.site_url + public.data.globals.logo }')
+    meta(property='og:image', content=site_url + logo)
     link(rel='shortcut icon', href='/favicon.ico')
-    link(rel='alternate', type='application/rss+xml', title='#{ public.data.globals.title } RSS Feed', href='/blog/rss.xml')
+    link(rel='alternate', type='application/rss+xml', title=site_title + "RSS Feed", href='/blog/rss.xml')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lekton')
     link(rel="stylesheet", href='/css/main.css')
@@ -31,7 +31,7 @@ html(lang="en")
     header.masthead
       .container
         h1
-          a(href='/')= public.data.globals.title
+          a(href='/')= site_title
       .img
     .content
       .container
