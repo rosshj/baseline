@@ -12,8 +12,9 @@ section.author
   .articles
     h2 Posts
     for post, slug in public.blog.data
-      article
-        a(href="/blog/#{ slug }")
-          h1.sm= post.title
-          h2.xs.date= post.date
-          p= post.description
+      if post.author == current.source
+        article
+          a(href="/blog/#{ slug }")
+            h1.sm= post.title
+            h2.xs.date= post.date
+            p= post.description
