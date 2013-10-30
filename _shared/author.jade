@@ -1,14 +1,13 @@
-for author, slug in public.authors.data 
-  aside.center.author
-    img(src='/images/#{ author.photo }', alt=author.name)
-    h2.sm= author.name
-    if author.about
-      p= author.about
-    p.links
-      a(href='/authors/#{ slug }') Posts
-      if author.twitter
-        span •
-        a(href='http://twitter.com/#{ author.twitter }') Twitter
-      if author.google_plus
-        span •
-        a(href='#{ author.google_plus }') Google+
+aside.center.author
+  img(src='/images/#{ author.photo }', alt=author.name)
+  h2.sm= author.name
+  if author.about
+    p= author.about
+  p.links
+    a(href='/authors/#{ author.name }') Posts
+    if author.twitter
+      span •
+      a(href='http://twitter.com/#{ author.twitter }') Twitter
+    if author.google_plus
+      span •
+      a(href='#{ author.google_plus }') Google+
