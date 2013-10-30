@@ -10,7 +10,6 @@ section.author
       span •
       a(href='#{ google_plus }') Google+
   .articles
-    h2 Posts
     for post, slug in public.blog.data
       if post.author == current.source
         article
