@@ -1,13 +1,13 @@
 aside.center.author
-  img(src='/images/#{ author.photo }', alt=author.name)
-  h2.sm= author.name
-  if author.about
-    p= author.about
+  img(src='/images/#{ public.authors.data[author].photo }', alt=public.authors.data[author].name)
+  h2.sm= public.authors.data[author].name
+  if public.authors.data[author].about
+    p= public.authors.data[author].about
   p.links
-    a(href='/authors/#{ author.name }') Posts
-    if author.twitter
+    a(href='/authors/#{ author }') Posts
+    if public.authors.data[author].twitter
       span •
-      a(href='http://twitter.com/#{ author.twitter }') Twitter
-    if author.google_plus
+      a(href='http://twitter.com/#{ public.authors.data[author].twitter }') Twitter
+    if public.authors.data[author].google_plus
       span •
-      a(href='#{ author.google_plus }') Google+
+      a(href='#{ public.authors.data[author].google_plus }') Google+
