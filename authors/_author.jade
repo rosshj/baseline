@@ -1,0 +1,19 @@
+section.author
+  img(src='/images/#{ photo }', alt=name)
+  h1.center= name
+  if about
+    p.center= about
+  p.links.center
+    if twitter
+      a(href='http://twitter.com/#{ twitter }') Twitter
+    if google_plus
+      span •
+      a(href='#{ google_plus }') Google+
+  .articles
+    for post, slug in public.blog.data
+      if post.author == current.source
+        article
+          a(href="/blog/#{ slug }")
+            h1.sm= post.title
+            h2.xs.date= post.date
+            p= post.description
