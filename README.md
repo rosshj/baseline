@@ -25,6 +25,5 @@ For easy deployment (via Dropbox) see [The Harp Platform](http://harp.io).
 ## Roadmap
 
 - Twitter Cards
-- Author links to Google+
 - Paging or Infinite Scroll
 - next and prev links in head
