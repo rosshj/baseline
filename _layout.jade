@@ -20,6 +20,14 @@ html(lang="en")
         meta(property='og:url', content=site_url + "/blog/" + current.path[1])
         meta(property='og:type', content='article')
     meta(property='og:image', content=site_url + logo)
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content="@" + site_twitter)
+    if current.path[0] === "blog"
+      if public.authors.data[author].twitter
+        meta(name='twitter:creator', content="@" + public.authors.data[author].twitter)
+    meta(name='twitter:title', content=locals.title ? title + " | " + site_title : site_title)
+    meta(name='twitter:description', content=description)
+    meta(name='twitter:image', content=site_url + logo)
     if current.path[0] === "blog"
       if public.authors.data[author].google_plus
         link(rel='author', href='#{ public.authors.data[author].google_plus }')
