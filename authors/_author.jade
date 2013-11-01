@@ -4,11 +4,14 @@ section.author
   if about
     p.center= about
   p.links.center
-    if twitter
-      a(href='http://twitter.com/#{ twitter }') Twitter
-    if google_plus
+    if public.authors.data[current.source].twitter
+      a(href='http://twitter.com/#{ public.authors.data[current.source].twitter }') Twitter
+    if public.authors.data[current.source].google_plus
       span •
-      a(href='#{ google_plus }') Google+
+      a(href='#{ public.authors.data[current.source].google_plus }') Google+
+    if public.authors.data[current.source].github
+      span •
+      a(href='https://github.com/#{ public.authors.data[current.source].github }') GitHub
   .articles
     for post, slug in public.blog.data
       if post.author == current.source
