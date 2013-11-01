@@ -3,6 +3,7 @@
     "site_title": "Baseline",
     "description": "Baseline is a blog boilerplate for the Harp platform.",
     "site_url": "http://baseline.harpapp.io",
-    "logo": "/images/logo.png"
+    "logo": "/images/logo.png",
+    "disqus_account": "rosshj"
   }
 }

@@ -17,7 +17,7 @@ html(lang="en")
     else
       if current.path[0] === "blog"
         meta(property='og:description', content=description)
-        meta(property='og:url', content=site_url + "/" + current.path[1])
+        meta(property='og:url', content=site_url + "/blog/" + current.path[1])
         meta(property='og:type', content='article')
     meta(property='og:image', content=site_url + logo)
     if current.path[0] === "blog"
