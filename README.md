@@ -1,33 +1,21 @@
 # Baseline
 
-<img src="http://rosshj.com/files/harp/baseline/baseline-logo.png" alt="Baseline logo" style="width: 25%; height: auto;">
+![Baseline logo](http://rosshj.com/files/harp/baseline/baseline-logo.png)
 
 [Baseline](http://baseline.harpapp.io/) is a blog boilerplate for the [Harp platform](http://harp.io/).
 
-<div style="float:left; width: 33.333%">
-  <ul>
-    <li>HTML5</li>
-    <li>CSS3</li>
-    <li>Responsive</li>
-    <li>Lightweight</li>
-  </ul>
-</div>
-<div style="float:left; width: 33.333%">
-  <ul>
-    <li>Uncluttered</li>
-    <li>Content First</li>
-    <li>RSS Feed</li>
-    <li>Disqus Comments</li>
-  </ul>
-</div>
-<div style="float:left; width: 33.333%">
-  <ul>
-    <li>Author Pages</li>
-    <li>Open Graph</li>
-    <li>Twitter Cards</li>
-    <li>Google Authorship</li>
-  </ul>
-</div>
+- HTML5
+- CSS3
+- Responsive
+- Lightweight
+- Uncluttered
+- Content First
+- RSS Feed
+- Disqus Comments
+- Author Pages
+- Open Graph
+- Twitter Cards
+- Google Authorship
 
 ![Baseline blog post page on desktop and mobile](http://rosshj.com/files/harp/baseline/baseline-post.jpg)
 
