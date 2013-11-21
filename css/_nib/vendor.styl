@@ -1,4 +1,4 @@
-use('../nodes/vendor-helpers.js')
+// use('../nodes/vendor-helpers.js')
 @import 'config'
 
 /*
@@ -540,19 +540,20 @@ input-placeholder = placeholder
 
 /*
  * Vendor background support (gradients).
+ * This is covered by Axis' gradient mixin now.
  */
 
-background()
-  if match('-gradient\(', ''+arguments)
-    vendor('background', arguments, vendor-property: false)
-  else
-    background arguments
+// background()
+//   if match('-gradient\(', ''+arguments)
+//     vendor('background', arguments, vendor-property: false)
+//   else
+//     background arguments
 
-background-image()
-  if match('-gradient\(', ''+arguments)
-    vendor('background-image', arguments, vendor-property: false)
-  else
-    background-image arguments
+// background-image()
+//   if match('-gradient\(', ''+arguments)
+//     vendor('background-image', arguments, vendor-property: false)
+//   else
+//     background-image arguments
 
 cursor()
   if match('-gradient\(', ''+arguments)
