@@ -11,15 +11,16 @@ html(lang="en")
         meta(name='description', content=description)
     meta(property='og:title', content=locals.title ? title + " | " + site_title : site_title)
     if current.path[0] === "index"
+      meta(property='og:type', content='website')
       meta(property='og:description', content=description)
       meta(property='og:url', content=site_url)
-      meta(property='og:type', content='website')
     else
       if current.path[0] === "blog"
+        meta(property='og:type', content='article')
         meta(property='og:description', content=description)
         meta(property='og:url', content=site_url + "/blog/" + current.path[1])
-        meta(property='og:type', content='article')
     meta(property='og:image', content=site_url + logo)
+    meta(property='og:site_name', content=site_title)
     meta(name='twitter:card', content='summary')
     meta(name='twitter:site', content="@" + site_twitter)
     if current.path[0] === "blog"
@@ -38,7 +39,7 @@ html(lang="en")
     link(rel="stylesheet", href='/css/main.css')
     //if lt IE 9
       <script src="/js/html5shiv.js"></script>
-    script(type='text/javascript')
+    script(type='text/javascript').
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', '#{ locals.analytics_account }']);
       _gaq.push(['_trackPageview']);
@@ -58,11 +59,15 @@ html(lang="en")
         if current.path[0] === "index"
           .articles
             for post, slug in public.blog._data
-              article
-                a(href="/blog/#{ slug }")
-                  h1= post.title
-                  h2.xs.date= post.date
-                  p= post.description
+              if post.layout !== false
+                article
+                  a(href="/blog/#{ slug }")
+                    img(src='/images/#{ public.authors._data[post.author].photo }', alt='#{ public.authors._data[post.author].name }', class='author')
+                    h1.sm= post.title
+                    h2.xs.date #{ post.date } • by #{ public.authors._data[post.author].name }
+                    if post.description
+                      p= post.description
+          != yield
         else
           if current.path[0] === "blog"
             != partial("/blog/_blog")
