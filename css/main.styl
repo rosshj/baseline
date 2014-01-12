@@ -192,6 +192,40 @@ aside.author
     margin 27px 0 0 0
     padding 27px 0 0 0
 
+.post-nav
+  list-style-type none
+  display block
+  width auto
+  text-align center
+  margin 0
+  border-top 1px solid rgba(0,0,0,0.1)
+.post-prev
+.post-next
+  margin-top: -1px
+  border none
+  display block
+  padding 10%
+.post-prev
+  &:before
+    content "\2190"
+    padding-right 0.5em
+.post-next
+  &:after
+    content "\2192"
+    padding-left: 0.5em
+@media (min-width: 568px)
+  .post-nav
+    width: 100%
+    overflow: hidden
+    padding: 5% 0 10% 0
+  .post-prev
+    float left
+    padding 0
+    clear none
+  .post-next
+    float right
+    padding 0
+
 .comments
   margin 60px 0 0 0
   padding 60px 0 0 0
