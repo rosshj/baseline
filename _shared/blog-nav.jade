@@ -16,8 +16,15 @@ each post, i in blog.sort(function(a,b){ a = new Date(a.date); b = new Date(b.da
       - prev = blog[i - 1]
       - next = blog[i + 1]
       //- The actual links
-      ol.post-nav
-        if prev
-          a.post-prev(href="#{ prev.slug }") #{ prev.title }
-        if next
-          a.post-next(href="#{ next.slug }") #{ next.title }
+      nav.post-nav
+        ul.clearfix
+          if prev
+            li
+              a.post-prev(href="#{ prev.slug }", title="#{ prev.title }")
+                strong Previous Post
+                span #{ prev.title }
+          if next
+            li
+              a.post-next(href="#{ next.slug }", title="#{ next.title }")
+                strong Next Post
+                span #{ next.title }
