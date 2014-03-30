@@ -26,11 +26,13 @@ By: [Ross Howard-Jones](http://rosshj.com/)
 ## Usage
 
 1. Install harp `sudo npm install harp -g` 
-2. Spin up Harp web server in root of porject `harp server --port 9000`
+2. Spin up Harp web server in root of project `harp server --port 9000`
 3. View at [localhost:9000](http://localhost:9000)
 
 For easy deployment (via Dropbox) see [The Harp Platform](http://harp.io).
 
 ## Roadmap
 
+- Gallery layout
+- Global navigation
 - Paging or Infinite Scroll
