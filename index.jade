@@ -1,0 +1,10 @@
+.articles
+  for post, slug in public.blog._data
+    if post.layout !== false
+      article
+        a(href="/blog/#{ slug }")
+          img(src='/images/#{ public.authors._data[post.author].photo }', alt='#{ public.authors._data[post.author].name }', class='author')
+          h1.sm= post.title
+          h2.xs.date #{ post.date } • by #{ public.authors._data[post.author].name }
+          if post.description
+            p= post.description

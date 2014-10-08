@@ -1,0 +1,156 @@
+body
+  margin 0
+  padding 0 0 60px 0
+  background rgb(255,255,255)
+  @media (max-width: 768px)
+    padding 0 0 48px 0
+  @media (max-width: 768px)
+    padding 0 0 36px 0
+  @media (max-width: 568px)
+    padding 0 0 27px 0
+
+figure
+  margin 1.5rem 0
+  figcaption
+    margin-top -1.5rem
+    padding 1.5rem
+    background rgb(242,242,242)
+    box-sizing border-box
+
+pre
+  padding 1.5rem
+  background rgb(242,242,242)
+  box-sizing border-box
+
+img
+  display block
+
+section.page
+section.author
+article.post
+.articles
+  width 76%
+  margin 0 12%
+  article
+    margin 0 0 3rem 0
+    a
+      display block
+      margin 0 0 0 -7%
+      padding 0 0 0 6%
+      border-left 6px solid rgb(255,255,255)
+      transition-property color, border-left-color
+      transition-duration 0.25s, 0.25s
+      animation-timing-function linear, linear
+      &:hover
+        border-left-color rgb(229,229,229)
+      img.author
+        float right
+        width 3rem
+        height 3rem
+        margin 0 0 0 1.5rem
+        border-radius 50%
+    &:last-child
+      margin-bottom 0
+      padding-bottom 0
+      border-bottom none
+  @media (max-width: 480px)
+    width 86%
+    margin 0 7%
+section.page
+section.author
+article.post
+  a
+    border-bottom 1px solid rgba(0,0,0,.1)
+    transition-property color, border-bottom-color
+    transition-duration 0.25s, 0.25s
+    animation-timing-function linear, linear
+    &:hover
+      border-bottom-color rgb(0,0,0,1)
+      text-shadow 0 8px 0 rgba(255,255,255,0)
+section.author
+  img
+    width 200px
+    margin 0 auto
+    border-radius 50%
+  .articles
+    width 100%
+    margin 2.5rem 0 0 0
+    padding 2.5rem 0 0 0
+    border-top 1px solid rgb(229,229,229)
+    a
+      border-bottom none
+
+.links
+  span
+    margin 0 .5rem
+    @media (max-width: 568px)
+      margin 0 .25rem
+
+img
+blockquote
+figcaption
+.embed
+  width 132%
+  margin 1.5rem -16%
+  @media (max-width: 1023px)
+    width 124%
+    margin 1.5rem -12%
+  @media (max-width: 768px)
+    width 120%
+    margin 1.5rem -10%
+  @media (max-width: 568px)
+    width 110%
+    margin 1.5rem -5%
+  @media (max-width: 480px)
+    width 108%
+    margin 1.5rem -4%
+figure.left
+figure.right
+  img
+    width 100%
+    margin 1.5rem 0
+  figcaption
+    width 100%
+    margin -1.5rem 0 1.5rem 0
+
+.left
+  float left
+  width 58%
+  margin 1.5rem 1.5rem 1.5rem -16%
+  @media (max-width: 1023px)
+    width 56%
+    margin 1.5rem 1.5rem 1.5rem -12%
+  @media (max-width: 768px)
+    width 55%
+    margin 1.5rem 1.5rem 1.5rem -10%
+  @media (max-width: 568px)
+    float none
+    width 110%
+    margin 1.5rem -5%
+  @media (max-width: 480px)
+    width 108%
+    margin 1.5rem -4%
+.right
+  float right
+  width 58%
+  margin 1.5rem -16% 1.5rem 1.5rem
+  @media (max-width: 1023px)
+    width 56%
+    margin 1.5rem -12% 1.5rem 1.5rem
+  @media (max-width: 768px)
+    width 55%
+    margin 1.5rem -10% 1.5rem 1.5rem
+  @media (max-width: 568px)
+    float none
+    width 110%
+    margin 1.5rem -5%
+  @media (max-width: 480px)
+    width 108%
+    margin 1.5rem -4%
+
+.clearfix:before
+.clearfix:after
+  content ""
+  display table
+.clearfix:after
+  clear both

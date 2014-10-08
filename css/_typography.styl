@@ -1,0 +1,190 @@
+html
+  font-size 24px
+  @media (max-width: 980px)
+    font-size 18px
+
+body
+  color rgb(51,51,51)
+  font 1rem/1.5 'Merriweather', serif
+  font-style normal
+  font-weight 300
+  font-smoothing subpixel-antialiased
+  text-size-adjust none
+
+h1
+h2
+h3
+h4
+h5
+h6
+  font-style normal
+  font-weight 400
+  line-height 1.1
+  margin 1.5rem 0 .5rem 0
+
+.masthead
+  .container
+    h1
+      font-size 1rem
+      font-weight 700
+      a
+        font-weight 700
+.page-index
+  .masthead
+    .container
+      h1
+        font-size 3.998rem
+
+h1.lg
+  font-size 2.827rem
+  font-weight 700
+  a
+    font-weight 700
+
+h1
+  font-size 2.827rem
+  font-weight 700
+
+h1.sm
+h2
+  font-size 1.999rem
+h2.date
+  color rgb(128,128,128)
+
+h1.xs
+h2.sm
+h3
+  font-size 1.414rem
+
+h2.xs
+h3.sm
+h4
+h5
+h6
+  font-size 1rem
+
+p
+  margin 1.5rem 0
+
+strong
+  font-weight 700
+
+small
+figcaption
+code
+  font-size 0.707rem
+
+cite
+  margin 0
+
+blockquote
+  font-size 1.5rem
+  font-weight 400
+  font-style italic
+  text-align center
+  box-sizing border-box
+  p:first-child
+    margin-top 0
+  p:last-child
+    margin-bottom 0
+
+pre
+  font-family 'Lekton', sans-serif
+  font-style normal
+  font-weight 400
+
+a
+  color rgb(51,51,51)
+  font-weight 400
+  text-decoration none
+  transition-property color
+  transition-duration 0.25s
+  animation-timing-function linear
+  &:hover
+    color rgb(0,0,0)
+  *
+    font-weight 300
+  strong
+    font-weight 700
+  h1
+    font-weight 700
+  h2, h3, h4, h5, h6
+    font-weight 400
+
+ul
+ol
+dl
+  padding 0
+  margin 1.5rem 0 1.5rem 1.5rem
+
+ul
+  list-style-type disc
+  ul
+    list-style-type circle
+    ul
+      list-style-type square
+
+ol
+  list-style-type decimal
+  ol
+    list-style-type lower-alpha
+    ol
+      list-style-type lower-roman
+
+hr
+  display block
+  height 0
+  margin 1.5rem 0
+  padding 0
+  border 0
+  border-top 1px solid rgb(229,229,229)
+
+/* adjust margins */
+p:first-child
+h1:first-child
+h2:first-child
+h3:first-child
+h4:first-child
+h5:first-child
+h6:first-child
+ul:first-child
+ol:first-child
+dl:first-child
+  margin-top 0
+
+p:last-child
+h1:last-child
+h2:last-child
+h3:last-child
+h4:last-child
+h5:last-child
+h6:last-child
+ul:last-child
+ol:last-child
+dl:last-child
+  margin-bottom 0
+
+p:only-child
+  margin 1.5rem 0
+
+h1 + p
+h2 + p
+h3 + p
+h4 + p
+h5 + p
+h6 + p
+hgroup + p
+hgroup + p
+hgroup + p
+hgroup + p
+hgroup + p
+hgroup + p
+  margin-top 0
+
+li > ul
+li > ol
+li > dl
+  margin-bottom 0
+
+.center
+  text-align center

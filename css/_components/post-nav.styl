@@ -1,0 +1,44 @@
+.post-nav
+  padding 2.5rem 0 0 0
+  border-top 1px solid rgba(0,0,0,0.1)
+  ul
+    list-style-type none
+    margin 0
+    padding 0
+    li
+      a
+        width 45%
+        padding 0 0 2.5rem 0
+        span
+          width 100%
+          display block
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis
+          font-size 1.333rem
+      .post-prev
+        float left
+        strong
+          font-weight 400
+          &:before
+            content "\2190"
+            padding 0 0.5rem 0 0
+      .post-next
+        float right
+        text-align right
+        strong
+          font-weight 400
+          &:after
+            content "\2192"
+            padding 0 0 0 0.5rem
+  @media (max-width: 568px)
+    padding 0
+    ul
+      li
+        .post-prev
+        .post-next
+          float none
+          width 100%
+          display block
+          padding 1rem 0
+          text-align center
