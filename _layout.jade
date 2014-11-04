@@ -62,20 +62,27 @@ html(lang="en")
       .img
     .content
       .container
-        if current.path[0] === "index"
+        if current.path[0] === "index" || current.path[0] === "tags"
           .articles
+            if current.path[0] === "tags" 
+              aside.center
+                h3= current.source.charAt(0).toUpperCase() + current.source.slice(1)
+                hr
             for post, slug in public.blog._data
               if post.layout !== false
+                if current.path[0] === "tags" 
+                  if post.tags.indexOf(current.source) == -1
+                    - continue    
                 article
-                  a(href='/authors/' + post.author)
-                    img(src='/images/#{ public.authors._data[post.author].photo }', alt='#{ public.authors._data[post.author].name }', class='author')
-                  a(href="/blog/#{ slug }")
+                  a.main(href="/blog/#{ slug }")
+                    img(src="/images/#{ public.authors._data[post.author].photo }", alt="#{ public.authors._data[post.author].name }", class="author")
                     h1.sm= post.title
                     h2.xs.date #{ post.date } • by #{ public.authors._data[post.author].name }
                     if post.description
-                      p= post.description
-                    for tag in post.tags
-                      = tag
+                      p= post.description  
+                  for tag in post.tags
+                    if current.source !== tag
+                      a.tags(href="/tags/#{ tag }")= tag.charAt(0).toUpperCase() + tag.slice(1)
           != yield
         else
           if current.path[0] === "blog"
