@@ -19,6 +19,7 @@ section.author
           a.main(href="/blog/#{ slug }")
             h1.sm= post.title
             h2.xs.date= post.date
-            p= post.description
-          for tag in post.tags
-            a.tags(href="/tags/#{ tag }")= tag.charAt(0).toUpperCase() + tag.slice(1)
+            p= post.description    
+          if post.tags
+            for tag in post.tags
+              a.tags(href="/tags/#{ tag }")= tag.charAt(0).toUpperCase() + tag.slice(1)

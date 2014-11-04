@@ -71,7 +71,7 @@ html(lang="en")
             for post, slug in public.blog._data
               if post.layout !== false
                 if current.path[0] === "tags" 
-                  if post.tags.indexOf(current.source) == -1
+                  if post.tags && post.tags.indexOf(current.source) == -1
                     - continue    
                 article
                   a.main(href="/blog/#{ slug }")
@@ -80,9 +80,10 @@ html(lang="en")
                     h2.xs.date #{ post.date } • by #{ public.authors._data[post.author].name }
                     if post.description
                       p= post.description  
-                  for tag in post.tags
-                    if current.source !== tag
-                      a.tags(href="/tags/#{ tag }")= tag.charAt(0).toUpperCase() + tag.slice(1)
+                  if post.tags
+                    for tag in post.tags
+                      if current.source !== tag
+                        a.tags(href="/tags/#{ tag }")= tag.charAt(0).toUpperCase() + tag.slice(1)
           != yield
         else
           if current.path[0] === "blog"
