@@ -16,7 +16,10 @@ section.author
     for post, slug in public.blog._data
       if post.author == current.source
         article
-          a(href="/blog/#{ slug }")
+          a.main(href="/blog/#{ slug }")
             h1.sm= post.title
             h2.xs.date= post.date
-            p= post.description
+            p= post.description    
+          if post.tags
+            for tag in post.tags
+              a.tags(href="/tags/#{ tag }")= tag.charAt(0).toUpperCase() + tag.slice(1)

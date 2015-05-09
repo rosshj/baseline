@@ -8,8 +8,10 @@ body
   background rgb(255,255,255)
   @media (max-width: 768px)
     padding 0 0 48px 0
-  @media (max-width: 568px)
+  @media (max-width: 768px)
     padding 0 0 36px 0
+  @media (max-width: 568px)
+    padding 0 0 27px 0
 
 body.line-36
   background-image url(/images/line-36.gif)
@@ -60,7 +62,6 @@ img
     width 100%
 
 .masthead
-  // margin 0 0 60px 0
   padding 5% 0
   position relative
   overflow hidden
@@ -100,9 +101,9 @@ article.post
   margin 0 12%
   article
     margin 0 0 72px 0
-    a
+    a.main
       display block
-      margin 0 0 0 -7%
+      margin 0 0 1% -7%
       padding 0 0 0 6%
       border-left 6px solid rgb(255,255,255)
       transition-property color, border-left-color
@@ -128,6 +129,10 @@ article.post
           width 36px
           height 36px
           margin 0 0 0 18px
+    a.tags
+      margin-right 1.3%
+      &:hover
+        text-shadow 0 8px 0 rgba(255,255,255,0)
     &:last-child
       margin-bottom 0
       padding-bottom 0
@@ -193,38 +198,63 @@ aside.author
     padding 27px 0 0 0
 
 .post-nav
-  list-style-type none
-  display block
-  width auto
-  text-align center
-  margin 0
+  padding 60px 0 0 0
   border-top 1px solid rgba(0,0,0,0.1)
-.post-prev
-.post-next
-  margin-top: -1px
-  border none
-  display block
-  padding 10%
-.post-prev
-  &:before
-    content "\2190"
-    padding-right 0.5em
-.post-next
-  &:after
-    content "\2192"
-    padding-left: 0.5em
-@media (min-width: 568px)
-  .post-nav
-    width: 100%
-    overflow: hidden
-    padding: 10% 0 6% 0
-  .post-prev
-    float left
+  @media (max-width: 1023px)
+    padding 48px 0 0 0
+  @media (max-width: 768px)
+    padding 36px 0 0 0
+  @media (max-width: 568px)
+    padding 27px 0 0 0
+  ul
+    list-style-type none
+    margin 0
     padding 0
-    clear none
-  .post-next
-    float right
+    li
+      a
+        width 45%
+        padding 0 0 60px 0
+        @media (max-width: 1023px)
+          padding 0 0 48px 0
+        @media (max-width: 768px)
+          padding 0 0 36px 0
+        @media (max-width: 568px)
+          padding 0 0 27px 0
+        span
+          width 100%
+          display block
+          white-space nowrap
+          overflow hidden
+          text-overflow ellipsis
+          font-size 18px
+          @media (max-width: 1023px)
+            font-size 16px
+      .post-prev
+        float left
+        strong
+          font-weight 400
+          &:before
+            content "\2190"
+            padding 0 0.5em 0 0
+      .post-next
+        float right
+        text-align right
+        strong
+          font-weight 400
+          &:after
+            content "\2192"
+            padding 0 0 0 0.5em
+  @media (max-width: 568px)
     padding 0
+    ul
+      li
+        .post-prev
+        .post-next
+          float none
+          width 100%
+          display block
+          padding 27px 0
+          text-align center
 
 .comments
   margin 60px 0 0 0
@@ -247,7 +277,6 @@ aside.author
     margin 0 .5em
     @media (max-width: 568px)
       margin 0 .25em
-
 
 img
 blockquote

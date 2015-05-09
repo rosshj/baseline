@@ -1,37 +1,42 @@
-doctype 5
+doctype html
 html(lang="en")
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
     title= locals.title ? title + " | " + site_title : site_title
+    
+    meta(property='og:title', content=locals.title ? title + " | " + site_title : site_title)
     if current.path[0] === "index"
       meta(name='description', content=description)
-    else
-      if current.path[0] === "blog"
-        meta(name='description', content=description)
-    meta(property='og:title', content=locals.title ? title + " | " + site_title : site_title)
+    else if current.path[0] === "blog"
+      meta(name='description', content=description)
+    
     if current.path[0] === "index"
       meta(property='og:type', content='website')
       meta(property='og:description', content=description)
       meta(property='og:url', content=site_url)
-    else
-      if current.path[0] === "blog"
-        meta(property='og:type', content='article')
-        meta(property='og:description', content=description)
-        meta(property='og:url', content=site_url + "/blog/" + current.path[1])
+        
+    else if current.path[0] === "blog"
+      meta(property='og:type', content='article')
+      meta(property='og:description', content=description)
+      meta(property='og:url', content=site_url + "/blog/" + current.path[1])
+        
     meta(property='og:image', content=site_url + logo)
     meta(property='og:site_name', content=site_title)
     meta(name='twitter:card', content='summary')
     meta(name='twitter:site', content="@" + site_twitter)
+      
     if current.path[0] === "blog"
       if public.authors._data[author].twitter
         meta(name='twitter:creator', content="@" + public.authors._data[author].twitter)
     meta(name='twitter:title', content=locals.title ? title + " | " + site_title : site_title)
     meta(name='twitter:description', content=description)
     meta(name='twitter:image', content=site_url + logo)
+      
     if current.path[0] === "blog"
       if public.authors._data[author].google_plus
         link(rel='author', href='#{ public.authors._data[author].google_plus }')
+          
     link(rel='shortcut icon', href='/favicon.ico')
     link(rel='alternate', type='application/rss+xml', title=site_title + "RSS Feed", href='/blog/rss.xml')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic')
@@ -48,6 +53,7 @@ html(lang="en")
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+      
   body(class="page-#{ current.path[0] } #{ current.path.join('-') }")
     header.masthead
       .container
@@ -56,17 +62,25 @@ html(lang="en")
       .img
     .content
       .container
-        if current.path[0] === "index"
+        if current.path[0] === "index" || current.path[0] === "tags"
           .articles
+            if current.path[0] === "tags" 
+              aside.center
+                h3= current.source.charAt(0).toUpperCase() + current.source.slice(1)
+                hr
             for post, slug in public.blog._data
               if post.layout !== false
+                if current.path[0] === "tags" 
+                  if !post.tags || post.tags.indexOf(current.source) == -1
+                    - continue    
                 article
-                  a(href="/blog/#{ slug }")
-                    img(src='/images/#{ public.authors._data[post.author].photo }', alt='#{ public.authors._data[post.author].name }', class='author')
+                  a.main(href="/blog/#{ slug }")
+                    img(src="/images/#{ public.authors._data[post.author].photo }", alt="#{ public.authors._data[post.author].name }", class="author")
                     h1.sm= post.title
                     h2.xs.date #{ post.date } • by #{ public.authors._data[post.author].name }
                     if post.description
-                      p= post.description
+                      p= post.description  
+                    != partial("/_shared/blog-tags.jade", { tags: post.tags })
           != yield
         else
           if current.path[0] === "blog"
